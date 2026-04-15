@@ -37,7 +37,7 @@ public class Unidad {
 
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @JoinColumn(name = "propietario_id", nullable = false)
-  private Usuario usuario;
+  private Usuario propietario;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "residente_actual_id")
