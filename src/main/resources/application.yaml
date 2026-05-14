@@ -1,3 +1,61 @@
 spring:
   application:
     name: comunidad
+  profiles:
+    active: test
+  jpa:
+    open-in-view: false
+app:
+  jwt:
+    secret: ${JWT_SECRET:dev-secret-key-change-in-production-min-32-chars}
+    expiration-ms: 86400000
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/comunidad_db}
+    username: ${DB_USER:comunidad_user}
+    password: ${DB_PASSWORD:comunidad_pass}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  springdoc:
+    swagger-ui:
+      enable: true
+      path: /swagger-ui.html
+    api-docs:
+      enable: true
+      path: /v3/api-docs
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  springdoc:
+    swagger-ui:
+      enable: false
+    api-docs:
+      enable: false
