@@ -47,7 +47,7 @@ public class Visita {
 
   @Enumerated(EnumType.STRING)
   @Column(nullable = false)
-  private CategoriaVisita categoriaVisita;
+  private CategoriaVisita categoria;
 
   @Column
   private String descripcionCategoria;

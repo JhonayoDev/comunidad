@@ -16,7 +16,7 @@ public interface VisitaRepository extends JpaRepository<Visita, Long> {
 
   List<Visita> findByNombreResponsableContainingIgnoreCase(String nombre);
 
-  List<Visita> findByHoraSAlidaIsNull();
+  List<Visita> findByHoraSalidaIsNull();
 
   List<Visita> findByCategoria(CategoriaVisita categoria);
 

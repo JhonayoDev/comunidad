@@ -12,7 +12,7 @@ import jakarta.validation.constraints.Size;
 
 public record RegistrarVisitaRequest(
     @Size(max = 7) String patente,
-    @NotBlank String nombreREsponsable,
+    @NotBlank String nombreResponsable,
     @NotNull @Min(1) Integer cantidadPersonas,
     @NotNull CategoriaVisita categoria,
     @Size(max = 200) String descripcionCategoria,

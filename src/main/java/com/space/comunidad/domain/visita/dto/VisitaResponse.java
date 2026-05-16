@@ -30,7 +30,7 @@ public record VisitaResponse(
         visita.getPatente(),
         visita.getNombreResponsable(),
         visita.getCantidadPersonas(),
-        visita.getCategoriaVisita(),
+        visita.getCategoria(),
         visita.getDescripcionCategoria(),
         visita.getHoraIngreso(),
         visita.getHoraSalida(),
