@@ -26,7 +26,8 @@ public class OpenApiConfig {
                 Permite administrar:
                 - Sectores y unidades del condominio
                 - Residentes y propietarios
-                - Visitas, vehículos y encomiendas *(próximamente)*
+                - Visitas, vehículos
+                - encomiendas *(próximamente)*
                 - Gastos comunes y avisos *(próximamente)*
 
                 **Autenticación:** todos los endpoints (excepto `/api/auth/**`) \

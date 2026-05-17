@@ -21,7 +21,7 @@ public interface VisitaRepository extends JpaRepository<Visita, Long> {
   List<Visita> findByCategoria(CategoriaVisita categoria);
 
   @Query("""
-      SELECT V FROM Visita v
+      SELECT v FROM Visita v
       JOIN v.unidades vu
       WHERE vu.unidad.id = :unidadId
       ORDER BY v.horaIngreso DESC
