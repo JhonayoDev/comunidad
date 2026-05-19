@@ -46,6 +46,7 @@ public class VisitaService {
         .categoria(request.categoria())
         .descripcionCategoria(request.descripcionCategoria())
         .horaIngreso(LocalDateTime.now())
+        .notas(request.notas())
         .registradoPor(guardia)
         .build();
 
@@ -86,7 +87,7 @@ public class VisitaService {
   }
 
   public List<VisitaResponse> buscarPorPatente(String patente) {
-    return visitaRepository.findByNombreResponsableContainingIgnoreCase(patente).stream()
+    return visitaRepository.findByPatenteContainingIgnoreCase(patente).stream()
         .map(VisitaResponse::from)
         .toList();
   }
